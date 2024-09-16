@@ -72,20 +72,17 @@ conda config --add channels conda-forge
 
 2. Upgrade installed packages
 
-| sudo apt upgrade |
-| :---- |
+`sudo apt upgrade`
 
 Upgrade all installed packages to their latest versions
 
 3. Install packages
 
-| sudo apt install \<package\> |
-| :---- |
+`sudo apt install <package>`
 
 4. Remove packages
 
-| sudo apt remove \<package\> |
-| :---- |
+`sudo apt remove <package>`
 
 5. Auto-remove unused dependencies
 
