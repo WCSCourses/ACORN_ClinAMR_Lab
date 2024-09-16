@@ -174,10 +174,10 @@ abricate --summary all_saureus_amr_genes.tab > saureus_amr_summary.tab
 less -S saureus_amr_summary.tab
 ```
 ## Exercises
-1. Run abricate on S. aureus sample A5-17_S17_L001.fasta against the CARD database and list all the amr genes present.
+1. Run abricate on _S. aureus_ sample A5-17_S17_L001.fasta against the CARD database and list all the amr genes present.
 2. From the resfinder database, identify the following:
    (i) The samples with ant(4')-Ia gene
    (ii) The sample with the largest number of AMR genes. How many are they?
-## AMR Genes in Klebsiella pneumoniae genomes
+## AMR Genes in _Klebsiella pneumoniae_ genomes
 
-*Run abricate on all the Klebsiella genomes against the NCBI database into a single report and generate a summary report
+*Run abricate on all the _Klebsiella genomes_ against the NCBI database into a single report and generate a summary report
