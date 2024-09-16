@@ -155,7 +155,10 @@ abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
 abricate -db ncbi *.fasta > all_saureus_amr_genes.tab
 abricate --summary all_saureus_amr_genes.tab > saureus_amr_summary.tab
 ```
-
+#### View the results
+```
+less -S saureus_amr_summary.tab
+```
 ## Exercises
 1. Run abricate on S. aureus sample A5-17_S17_L001.fasta against the CARD database and list all the amr genes present.
 2. From the resfinder database, identify the following:
