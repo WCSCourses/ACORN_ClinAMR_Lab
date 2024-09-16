@@ -1,5 +1,5 @@
-**Computational Practical 1:  Computing environment and setup**  
-**Module Developers: Dr. Stanford Kwenda, George Githinji, Martin Aslett**
+#Computational Practical 1:  Computing environment and setup#
+##Module Developers: Dr. Stanford Kwenda, George Githinji, Martin Aslett##
 
 **1.0 Learning outcomes**
 
