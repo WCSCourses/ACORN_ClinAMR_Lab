@@ -1,22 +1,22 @@
-# Computational Practical 1:  Computing environment and setup #
-## Module Developers: Dr. Stanford Kwenda, George Githinji, Martin Aslett ##
+# Computational Practical 1:  Computing environment and setup 
+## Module Developers: Dr. Stanford Kwenda, George Githinji, Martin Aslett 
 
-**1.0 Learning outcomes**
+### 1.0 Learning outcomes
 
 * Install bioinformatics tools successfully using the linux command-line interface  
 * Understand how to create various environments on linux-based computer systems and manage bioinformatics packages or tools.
 
-**1.1 Introduction**  
+### 1.1 Introduction
 The field of bioinformatics relies heavily on Linux-based computers and software. In most set-ups users connect to a central server from their individual laptops in order to access bioinformatics tools and perform analysis. Often, such linux systems are maintained by an experienced system administrator, e.g. (remote) servers, high performance computing (HPC) clusters.
 
-**1.2 Computing environments**
+### 1.2 Computing environments
 
 * Technology infrastructure \+ software platforms used to run applications  
 * Choice of environment depends on specific requirements and the financial resources available to purchase/pay for access
 
 ![][image1]  
 https://www.geeksforgeeks.org/computing-environments/  
-**1.3 Package managers**
+### 1.3 Package managers
 
 * Essential tools for managing software installations, updates and dependencies  
 * Automated and simplified retrieval, configuration and installation of packages from repositories  
@@ -60,11 +60,11 @@ conda config --add channels conda-forge
 
 * It’s generally straightforward to install software using package managers
 
-**1.3.1 Using APT e.g. on Ubuntu**
+#### 1.3.1 Using APT e.g. on Ubuntu
 
 ![][image2]
 
-**Exercise 1:**  
+### Exercise 1: 
 
 1. Update Package Information:
 
@@ -88,7 +88,7 @@ Upgrade all installed packages to their latest versions
 
 `sudo apt autoremove`
 
-**1.4 What is sudo?**
+### 1.4 What is sudo?
 
 ```
 sudo #super user do!
@@ -97,14 +97,14 @@ su #switch user
 # su will ask for the root password and give you a super user prompt, signified by the # symbol
 ```
 
-**1.5 Manual installation of bioinformatics tools**  
+### 1.5 Manual installation of bioinformatics tools  
 1.5.1 Compiled binaries   
 1.5.2 Installing manually using make, configure, and make install
 
-**1.6 Environment management**  
+### 1.6 Environment management  
 Different bioinformatics tools may have conflicting dependencies or version requirements. This often complicates installation of bioinformatics tools. Thus, in bioinformatics there is often a need to create isolated environments which will allow specific versions of software tools and their dependencies to be installed without affecting the systems global configuration. Different approaches can be used to create such isolated environments and handle dependencies issues::
 
-**1\.       Conda environments**  
+### 1\.       Conda environments**  
 Managing software environments using conda is helpful in avoiding dependency conflicts and allows various bioinformatics tools to work together correctly. It makes sharing environments with others easier easy \- allowing for reproducibility
 
 **2\.       Modules**
