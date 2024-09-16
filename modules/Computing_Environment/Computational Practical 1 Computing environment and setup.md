@@ -86,15 +86,16 @@ Upgrade all installed packages to their latest versions
 
 5. Auto-remove unused dependencies
 
-| sudo apt autoremove |
-| :---- |
+`sudo apt autoremove`
 
 **1.4 What is sudo?**
 
-| sudo \#super user do\!su \#switch user |
-| :---- |
+```
+sudo #super user do!
+su #switch user
 
-su \#su will ask **for** the root password **and** give you a super user prompt, signified by the \# symbol
+# su will ask for the root password and give you a super user prompt, signified by the # symbol
+```
 
 **1.5 Manual installation of bioinformatics tools**  
 1.5.1 Compiled binaries   
@@ -140,13 +141,23 @@ In our practical session we will explore conda including how to create, activate
 
 2\. Install miniconda
 
-| \# download miniconda cd $HOME wget \-c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86\_64.sh \# install miniconda bash Miniconda3-latest-Linux-x86\_64.sh  |
-| :---- |
+```
+# download miniconda
+cd $HOME
+wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# install miniconda
+bash Miniconda3-latest-Linux-x86_64.sh
+
+```
 
 3\. Check/test if your installation was successful (You can use these commands to check if you already have conda installed before doing steps 1 & 2 above)
 
-| conda list\# ORconda info –-env |
-| :---- |
+```
+conda list
+# OR
+conda info –-env
+
+```
 
 4\. Setting up your first env  
 Let’s assume that you have just been given the task to perform some QC on a set of raw fastq files (short reads), and you have decided to perform the QC and filtering using e.g. a tool called trimGalore. Your task is to setup a readqc environment which will safely and correctly install the tool you have decided to use and the requisite dependencies
@@ -162,48 +173,58 @@ Do either of the following to create your environment:
 1. Using a one-liner command, you can do the following  
    
 
-| conda create \-n mytest trim-galore\==0.6.10 \-c bioconda \--solver\=libmamba |
-| :---- |
+```
+conda create -n mytest trim-galore==0.6.10 -c bioconda --solver=libmamba
+
+```
 
    
 
 2. Using an environment definition file  
    
 
-| conda env create \-f \~/cp1/qc\_env\_file.yml  \--solver=libmamba |
-| :---- |
+```
+conda env create -f ~/qc_env_file.yml --solver=libmamba
+
+```
 
 Once you have successfully created the env, the next step is to activate in order to use the tools/packages within this environment
 
-| conda activate myqcenv |
-| :---- |
+`conda activate myqcenv `
 
 ![][image5]
 
 Check if you now have trim-galore in your path
 
-| trim\_galore \--version |
-| :---- |
+`trim_galore --version`
 
 Deactivate an environment
 
-| conda deactivate |
-| :---- |
+`conda deactivate`
 
 List conda environments currently installed
 
-| conda env list\# ORconda info \--env |
-| :---- |
+```
+conda env list
+# OR
+conda info --env
+```
 
 List conda packages currently installed
 
-| conda list\# Or select packages starting with a specific prefixconda list ^py\# for more optionsconda list \--help |
-| :---- |
+```
+conda list
+# Or select packages starting with a specific prefix
+conda list ^py
+# for more options
+conda list --help
+```
 
 Remove a conda environment
 
-| conda env remove \-n mytest \--solver\=libmamba |
-| :---- |
+```
+conda env remove -n mytest --solver=libmamba
+```
 
 **Accessing a linux server from a Windows computer**
 
@@ -234,15 +255,18 @@ Remove a conda environment
 
 Set the appropriate version
 
-| \# Hints for using nano:nano pycoqc\_env.yml \# To create a file:Ctrl \+ O \#To save a fileCtrl \+ X \# To exit |
-| :---- |
+```
+# Hints for using nano:
+nano pycoqc_env.yml # To create a file:
+Ctrl + O #To save a file
+Ctrl + X # To exit
+```
 
-3. Create the env using conda **env** create
+3. Create the env using `conda env create`
+   If unsure check the commands options using `conda env create --help`
 
-		If unsure check the commands options using conda env create \--help
-
-4. Activate the environment  
-   5. Print out the version of pycoQC  
+5. Activate the environment  
+   5. Print out the version of `pycoQC` 
    6. Deactivate the environment and try to print out the version of pycoQC  
    7. Activate the pycoqc environment and show all the options for using pycoQC  
         
