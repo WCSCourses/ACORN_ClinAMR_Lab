@@ -94,22 +94,25 @@ Run abricate using resfinder database and save to a file
 abricate -db resfinder A1-1_S1_L001.fasta > A1-1_resfinder.tab
 ```
 
-> abricate           : run the tool <br/>
--db                  : flag used to specify the database to use <br/>
-resfinder            : database. Alternatively, we can use NCBI or CARD here <br/>
-A1-1_S1_L001.fasta   : path to contig file <br/>
-">"                    : redirection symbol used to save the output to a file <br/>
-A1-1_resfinder.tab   : path to output file
+<pre>
+abricate           : run the tool
+-db                : flag used to specify the database to use
+resfinder          : database. Alternatively, we can use NCBI or CARD here
+A1-1_S1_L001.fasta : path to contig file
+">"                : redirection symbol used to save the output to a file
+A1-1_resfinder.tab : path to output file
+</pre>
 
 
 ##### Open the file with the AMR results
 ```
 less -S A1-1_resfinder.tab
 ```
-> less	: bash command to open files one page at a time <br/>
-> -S	: flag to prevent text wrapping <br/>
-> A1-1_resfinder.tab	: path to output file
-
+<pre>
+less                : bash command to open files one page at a time
+-S                  : flag to prevent text wrapping
+A1-1_resfinder.tab  : path to output file
+</pre>
 
 #### 6.2.4	Interpreting ABRIcate results
 The table below includes some of the columns of the ABRicate resfinder output file 
