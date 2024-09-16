@@ -4,8 +4,16 @@
 ### 6.0 Introduction
 Antibiotic resistance poses a significant health challenge because drugs that were once highly effective are no longer able to cure bacterial infections. The primary factor contributing to acquired antimicrobial resistance is often horizontal gene transfer between bacterial isolates. This transfer can occur through various mechanisms such as membrane vesicle fusion, transduction, transformation, and conjugation. In the first part of this practical, we will analyze Whole Genome Sequences to identify antimicrobial resistance genes acquired through horizontal gene transfer.
 ### 6.1 Bacterial strains to be analyzed
-  1.	_Staphylococcus aureus_
-  2.	_Klebsiella pneumoniae_
+  1.	_Staphylococcus aureus_ n=46
+  2.	_Klebsiella pneumoniae_ n=47
+
+#### Lets start by copying data
+```
+cd ~
+mkdir data data/saureus data/klebsiella
+rsync -avP /acorn_training_course_2024/saureus/saureus data/
+rsync -avP /acorn_training_course_2024/klebsiella/klebsiella data/
+```
 ### 6.2 WGS-based prediction of AMR using ABRicate
 #### 6.2.1 Introduction to ABRicate 
 ABRicate is a tool for mass screening of contigs for antimicrobial resistance or virulence genes. The name ABRicate was chosen as the first 3 letters are a common acronym for “Anti-Biotic Resistance” 
@@ -99,7 +107,7 @@ abricate -list
 #### 6.2.3	Detection of acquired antimicrobial resistance genes
 Run abricate using resfinder database and save to a file
 ```
-abricate -db resfinder data/Saureus/A1-1_S1_L001.fasta > A1-1_resfinder.tab
+abricate -db resfinder data/saureus/A1-1_S1_L001.fasta > A1-1_resfinder.tab
 ```
 
 <pre>
@@ -121,7 +129,13 @@ less                : bash command to open files one page at a time
 -S                  : flag to prevent text wrapping
 A1-1_resfinder.tab  : path to output file
 </pre>
+**Let's repeat the same steps using the NCBI database**
+```
+abricate -db ncbi data/saureus/A1-1_S1_L001.fasta > A1-1_ncbi.tab
+less -S A1-1_ncbi.tab
+```
 
+What difference do you observe?
 #### 6.2.4	Interpreting ABRIcate results
 The table below includes some of the columns of the ABRicate resfinder output file 
 
