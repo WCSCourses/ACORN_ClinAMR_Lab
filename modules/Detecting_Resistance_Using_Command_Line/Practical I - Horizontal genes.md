@@ -4,8 +4,8 @@
 ### 6.0 Introduction
 Antibiotic resistance poses a significant health challenge because drugs that were once highly effective are no longer able to cure bacterial infections. The primary factor contributing to acquired antimicrobial resistance is often horizontal gene transfer between bacterial isolates. This transfer can occur through various mechanisms such as membrane vesicle fusion, transduction, transformation, and conjugation. In the first part of this practical, we will analyze Whole Genome Sequences to identify antimicrobial resistance genes acquired through horizontal gene transfer.
 ### 6.1 Bacterial strains to be analyzed
-  1.	_Staphylococcus aureus_ n=46
-  2.	_Klebsiella pneumoniae_ n=47
+  1.	_Staphylococcus aureus_ (n=46)
+  2.	_Klebsiella pneumoniae_ (n=47)
 
 #### Lets start by copying data
 ```
