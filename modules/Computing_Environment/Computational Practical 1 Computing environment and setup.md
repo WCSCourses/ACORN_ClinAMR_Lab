@@ -24,7 +24,7 @@ https://www.geeksforgeeks.org/computing-environments/
   * APT (Advanced Package Tool) e.g. on Debian-based distributions (e.g. Ubuntu)   
   * YUM (Yellowdog Updater, Modified) e.g. Red Hat based distros such as CentOS, Fedora
 
-***
+```
 yum #Main command for package management
 #Example commands:
 sudo yum update #Updates installed packages
@@ -32,19 +32,30 @@ sudo yum install <package> #Installs a package
 sudo yum remove <package>: #Removes a package
 sudo yum search <keyword>: #Searches for packages
 
-***
+```
 
   * Conda  
     
+```
+conda #Main command for package management
+#Example commands:
+conda update conda #Updates conda itself
+conda install <package> #Installs a package
+conda remove <package> #Removes a package
+conda search <package> #Searches for packages
 
-| conda \#Main command for package management\#Example commands:conda update conda \#Updates conda itselfconda install \<package\> \#Installs a packageconda remove \<package\> \#Removes a packageconda search \<package\> \#Searches for packages |
-| :---- |
+```
+
 
     * Bioconda channel \- distribution of bioinformatics software packages  
       
 
-| conda config \--add channels defaultsconda config \--add channels biocondaconda config \--add channels conda-forge |
-| :---- |
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+
+```
 
 
 * It’s generally straightforward to install software using package managers
@@ -57,8 +68,7 @@ sudo yum search <keyword>: #Searches for packages
 
 1. Update Package Information:
 
-| sudo apt update |
-| :---- |
+`sudo apt update`
 
 2. Upgrade installed packages
 
