@@ -132,4 +132,24 @@ The table below includes some of the columns of the ABRicate resfinder output fi
 | A1-1_S1_L001.fasta |	NODE_14_length_45910_cov_19.064907 | mecA | Amoxicillin; Amoxicillin+Clavulanic_acid; Ampicillin; Ampicillin+Clavulanic_acid; Cefepime;Cefixime; Cefotaxime; Cefoxitin; Ceftazidime; Ertapenem;Imipenem; Meropenem; Piperacillin; Piperacillin+Tazobactam |
 | A1-1_S1_L001.fasta | NODE_51_length_21735_cov_23.672622 | tet(M) | Doxycycline; Tetracycline; Minocycline |
 
+#### 6.2.5 Combining reports across sampless
+ABRicate can combine results into a simple matrix of gene presence/absence. An absent gene is denoted . and a present gene is represented by its '%COVERAGE`. This can be individual abricate reports, or a combined one.
 
+##### Run abricate on `A1-2_S2_L001.fasta`
+```
+abricate -db resfinder data/Saureus/A2-1_S2_L001.fasta > A1-2_resfinder.tab
+````
+##### Combine
+```
+abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
+```
+
+| #FILE |	NUM_FOUND |	ant(9)-Ia_1	| aph(2'')-Ia_2	| blaZ_79 |	erm(A)_1	|erm(B)_18	| mecA_6	|tet(M)_7 |
+|-----|----------|-------------|----------------|--------|-----------|----------|----------------|----|
+|A1-1_resfinder.tab|	4	|100.00|	.	|.|	100.00|	.|	100.00|	100.00|
+|A1-2_resfinder.tab|	4|	.	|100.00|	100.00|	.|	100.00	|100.00|	.|
+
+
+
+
+## Exercises
