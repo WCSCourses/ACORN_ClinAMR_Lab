@@ -104,12 +104,12 @@ su #switch user
 ### 1.6 Environment management  
 Different bioinformatics tools may have conflicting dependencies or version requirements. This often complicates installation of bioinformatics tools. Thus, in bioinformatics there is often a need to create isolated environments which will allow specific versions of software tools and their dependencies to be installed without affecting the systems global configuration. Different approaches can be used to create such isolated environments and handle dependencies issues::
 
-### 1\.       Conda environments**  
+#### a\.       Conda environments 
 Managing software environments using conda is helpful in avoiding dependency conflicts and allows various bioinformatics tools to work together correctly. It makes sharing environments with others easier easy \- allowing for reproducibility
 
-**2\.       Modules**
+#### b\.       Modules
 
-**3\.       Containers**  
+#### c\.       Containers 
 Containerization technologies such as Singularity and Docker can be used to create isolatedEnvironments with all dependencies pre-installed to overcome dependency issues. Powerful tool for creating isolated and reproducible environments to run software and bioinformatics analyses. Most popular containerization software platforms in bioinformatics are:
 
 * Docker  
@@ -122,14 +122,14 @@ Main benefits include:
 * Portability
 
    
-Cloud-based solutions
+### Cloud-based solutions
 
 * Scalable, flexible and often cost-effective  
 * Virtualized environments that can be used to deploy bioinformatics software
 
 In our practical session we will explore conda including how to create, activate, remove environments etc.
 
-**Exercise 2: Creating conda environments**
+### Exercise 2: Creating conda environments**
 
 1\. First you will need to check/ensure that conda is already installed on your system
 
@@ -226,7 +226,7 @@ Remove a conda environment
 conda env remove -n mytest --solver=libmamba
 ```
 
-**Accessing a linux server from a Windows computer**
+### Accessing a linux server from a Windows computer
 
 1. Install WSL  
    [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)  
@@ -236,13 +236,13 @@ conda env remove -n mytest --solver=libmamba
    2. WinSCP \- for securely copying files between the server and your local computer  
       1. [https://winscp.net/eng/download.php](https://winscp.net/eng/download.php)
 
-**Building bioinformatics workflows/pipelines**
+### Building bioinformatics workflows/pipelines
 
 1. Bash  
 2. Python  
 3. Nextflow
 
-**Exercise 3: Setting-up a conda environment for QC tool that processes nanopore long read data**
+### Exercise 3: Setting-up a conda environment for QC tool that processes nanopore long read data
 
 1. In this exercise we will be setting up an env for a tool called pycoQC  
 2. Using the steps outlined below, go ahead and create a new environment called pycoqc  
@@ -250,10 +250,16 @@ conda env remove -n mytest --solver=libmamba
    2. Create an environment definition file. It should have the following sections:  
       1. You can create the file using nano on the linux terminal
 
-| name: pycoqcchannels:  \- defaults  \- bioconda  \- conda-forgedependencies:  \- pycoqc= |
-| :---- |
-
-Set the appropriate version
+```
+name: pycoqc
+channels:
+- defaults
+- bioconda
+- conda-forge
+dependencies:
+- pycoqc=
+```
+***Set the appropriate version***
 
 ```
 # Hints for using nano:
@@ -274,7 +280,7 @@ Ctrl + X # To exit
         
       
 
-**Further reading:**
+### Further reading:
 
 1. [https://ubuntu.com/server/docs/package-management](https://ubuntu.com/server/docs/package-management)  
 2. [https://modules.sourceforge.net/](https://modules.sourceforge.net/)  
