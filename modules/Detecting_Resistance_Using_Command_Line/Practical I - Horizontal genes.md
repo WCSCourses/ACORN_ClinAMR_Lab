@@ -10,7 +10,7 @@ Antibiotic resistance poses a significant health challenge because drugs that we
 #### Lets start by copying data
 ```
 cd ~
-mkdir data data/saureus data/klebsiella
+mkdir data
 rsync -avP /acorn_training_course_2024/saureus/saureus data/
 rsync -avP /acorn_training_course_2024/klebsiella/klebsiella data/
 ```
