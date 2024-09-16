@@ -24,8 +24,15 @@ https://www.geeksforgeeks.org/computing-environments/
   * APT (Advanced Package Tool) e.g. on Debian-based distributions (e.g. Ubuntu)   
   * YUM (Yellowdog Updater, Modified) e.g. Red Hat based distros such as CentOS, Fedora
 
-| yum \#Main command for package management\#Example commands:sudo yum update \#Updates installed packagessudo yum install \<package\> \#Installs a packagesudo yum remove \<package\>: \#Removes a packagesudo yum search \<keyword\>: \#Searches for packages |
-| :---- |
+***
+yum #Main command for package management
+#Example commands:
+sudo yum update #Updates installed packages
+sudo yum install <package> #Installs a package
+sudo yum remove <package>: #Removes a package
+sudo yum search <keyword>: #Searches for packages
+
+***
 
   * Conda  
     
