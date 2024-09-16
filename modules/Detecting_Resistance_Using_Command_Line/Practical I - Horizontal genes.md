@@ -135,7 +135,7 @@ abricate -db ncbi data/saureus/A1-1_S1_L001.fasta > A1-1_ncbi.tab
 less -S A1-1_ncbi.tab
 ```
 
-What difference do you observe?
+**What difference do you observe?**
 #### 6.2.4	Interpreting ABRIcate results
 The table below includes some of the columns of the ABRicate resfinder output file 
 
