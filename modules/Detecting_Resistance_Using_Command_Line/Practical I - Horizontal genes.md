@@ -78,20 +78,28 @@ abricate –list
 <pre>
 
 DATABASE        SEQUENCES   DBTYPE  	DATE
-card            2631        nucl    	2024-Sep-9
-ecoli_vf        2701        nucl    	2024-Sep-9
-plasmidfinder 	460         nucl    	2024-Sep-9
-ecoh            597         nucl    	2024-Sep-9
-ncbi          	5386        nucl    	2024-Sep-9
-resfinder      	3077        nucl    	2024-Sep-9
+card            2631        nucl    	2023-Nov-4
+ecoli_vf        2701        nucl    	2023-Nov-4
+plasmidfinder 	460         nucl    	2023-Sep-9
+ecoh            597         nucl    	2023-Sep-9
+ncbi          	5386        nucl    	2023-Sep-9
+resfinder      	3077        nucl    	2023-Sep-9
 
 </pre>
-
+#### (iii) Update databases
+```
+abricate-get_db --db ncbi
+abricate-get_db --db card
+abricate-get_db --db resfinder
+```
+```
+abricate -list
+```
 
 #### 6.2.3	Detection of acquired antimicrobial resistance genes
 Run abricate using resfinder database and save to a file
 ```
-abricate -db resfinder A1-1_S1_L001.fasta > A1-1_resfinder.tab
+abricate -db resfinder data/Saureus/A1-1_S1_L001.fasta > A1-1_resfinder.tab
 ```
 
 <pre>
@@ -119,9 +127,9 @@ The table below includes some of the columns of the ABRicate resfinder output fi
 
 | #FILE	| SEQUENCE | GENE | PRODUCT RESISTANCE |
 |------ |----------|------|--------------------|
-| A1-1_S1_L001.fasta | NODE_103_length_6610_cov_29.786534 | ant(9)-Ia_1	| | 
-| A1-1_S1_L001.fasta | NODE_103_length_6610_cov_29.786534 | erm(A)_1 |	Erythromycin; Lincomycin; Clindamycin; Quinupristin; Pristinamycin_IA; Virginiamycin_S |
-| A1-1_S1_L001.fasta |	NODE_14_length_45910_cov_19.064907 | mecA_6 | Amoxicillin; Amoxicillin+Clavulanic_acid; Ampicillin; Ampicillin+Clavulanic_acid; Cefepime;Cefixime; Cefotaxime; Cefoxitin; Ceftazidime; Ertapenem;Imipenem; Meropenem; Piperacillin; Piperacillin+Tazobactam |
-| A1-1_S1_L001.fasta | NODE_51_length_21735_cov_23.672622 | tet(M)_7 | Doxycycline; Tetracycline; Minocycline |
+| A1-1_S1_L001.fasta | NODE_103_length_6610_cov_29.786534 | ant(9)-Ia	| | 
+| A1-1_S1_L001.fasta | NODE_103_length_6610_cov_29.786534 | erm(A) |	Erythromycin; Lincomycin; Clindamycin; Quinupristin; Pristinamycin_IA; Virginiamycin_S |
+| A1-1_S1_L001.fasta |	NODE_14_length_45910_cov_19.064907 | mecA | Amoxicillin; Amoxicillin+Clavulanic_acid; Ampicillin; Ampicillin+Clavulanic_acid; Cefepime;Cefixime; Cefotaxime; Cefoxitin; Ceftazidime; Ertapenem;Imipenem; Meropenem; Piperacillin; Piperacillin+Tazobactam |
+| A1-1_S1_L001.fasta | NODE_51_length_21735_cov_23.672622 | tet(M) | Doxycycline; Tetracycline; Minocycline |
 
 
