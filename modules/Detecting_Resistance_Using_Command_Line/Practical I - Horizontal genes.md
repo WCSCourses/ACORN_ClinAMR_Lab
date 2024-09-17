@@ -116,7 +116,7 @@ Run abricate using resfinder database and save to a file
 mkdir -p amr_genes
 ```
 ```
-abricate -db resfinder data/A1-1_S1_L001.fasta > amr_genes/A1-1_resfinder.tab
+abricate -db resfinder data/saureus/A1-1_S1_L001.fasta > amr_genes/A1-1_resfinder.tab
 ```
 
 <pre>
@@ -147,7 +147,7 @@ A1-1_resfinder.tab  : path to output file
 **Let's repeat the same steps using the NCBI database**
 ```
 cd ..
-abricate -db ncbi data/A1-1_S1_L001.fasta > amr_genes/A1-1_ncbi.tab
+abricate -db ncbi data/saureus/A1-1_S1_L001.fasta > amr_genes/A1-1_ncbi.tab
 cd amr_genes
 less -S A1-1_ncbi.tab
 ```
@@ -169,7 +169,7 @@ ABRicate can combine results into a simple matrix of gene presence/absence. An a
 ##### Run abricate on `A1-2_S2_L001.fasta`
 ```
 cd ~/ACORN_course/cp6/
-abricate -db resfinder data/A1-2_S2_L001.fasta > amr_genes/A1-2_resfinder.tab
+abricate -db resfinder data/saureus/A1-2_S2_L001.fasta > amr_genes/A1-2_resfinder.tab
 ````
 ##### Combine
 ```
@@ -187,7 +187,7 @@ abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
 cd ACORN_course/cp6/
 ```
 ```
-abricate -db ncbi data/*.fasta > amr_genes/all_saureus_amr_genes.tab
+abricate -db ncbi data/saureus/*.fasta > amr_genes/all_saureus_amr_genes.tab
 abricate --summary amr_genes/all_saureus_amr_genes.tab > amr_genes/saureus_amr_summary.tab
 ```
 #### View the results
