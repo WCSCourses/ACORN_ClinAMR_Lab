@@ -4,8 +4,7 @@
 ## 2.0 Learning outcomes
 
 ## 2.1 Introduction  
-A typical whole genome sequencing process involves genomic DNA isolation, library  
-preparation and sequencing. Errors can be introduced during the library preparation and sequencing steps which may cause inaccurate representations of the original DNA sequences. 
+A typical whole genome sequencing process involves genomic DNA isolation, library preparation and sequencing. Errors can be introduced during the library preparation and sequencing steps which may cause inaccurate representations of the original DNA sequences. 
 
 Potential problems or quality related issues with raw next generation sequencing (NGS) data include:
 
@@ -112,9 +111,21 @@ mkdir -p $clean_reads
 
 `raw_reads=/data/acorn_training_course_2024/RawRead/kleb`
 
-5. Execute the command below to perform QC on all samples in the raw\_reads directory
+5. Execute the command below to perform QC on a single sample at a time
 
-6. Otherwise we can use a handy for loop to process all the raw fastq using a single command
+```
+read1=$(find $raw_reads -name "A6-1*R1*")
+read2=$(find $raw_reads -name "A6-1*R2*")
+
+fastp -i "$read1" -I "$read2" -q 20 -l 36 --cut_front -M 10 -W 4 -R "A6-1" \
+-j $clean_reads/A6-1.fastp.json -h $clean_reads/A6-1.fastp.html \
+--correction --overrepresentation_analysis --thread 6 \
+-o $clean_reads/A6-1.R1.fq.gz -O $clean_reads/A6-1.R2.fq.gz
+
+
+```
+
+7. Otherwise we can use a handy for loop to process all the raw fastq using a single command
 
 ***Execute the for loop to perform QC on all samples in the raw\_reads directory***
 
