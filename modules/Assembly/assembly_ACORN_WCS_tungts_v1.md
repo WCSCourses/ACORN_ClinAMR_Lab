@@ -15,11 +15,11 @@ Firstly, we use `--isolate` mode to indicate our input is from bacteiral isolate
 
 We assembly the short read using this command: 
 
-`SPAdes-4.0.0-Linux/bin/spades.py --isolate -1 {input.read1} -2 {input.read2} -o {output}`
+`spades.py --isolate -1 {input.read1} -2 {input.read2} -o {output}`
 
 We can try with other flags (**Optional if you have time**)
 
-`SPAdes-4.0.0-Linux/bin/spades.py --isolate -1 {input.read1} -2 {input.read2} -o {output} -t 8 -k 55,71,91,111 --cov-cutoff 20`
+`spades.py --isolate -1 {input.read1} -2 {input.read2} -o {output} -t 8 -k 55,71,91,111 --cov-cutoff 20`
 
 - `-t 8`: use 4 threads/cores to run assembly. You can change the number to increase or decrease number of threads which suits your commputer
 - `-k 55,71,91,111` set of k-mer used for assembly. To reduce the time of assembly, you can reduce the number of number. K-mer must not higher the read length. 
