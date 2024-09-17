@@ -17,6 +17,7 @@ cd ~
 mkdir -p ACORN_course/cp6/data
 rsync -avP /data/acorn_training_course_2024/saureus/saureus ACORN_course/cp6/data/
 rsync -avP /data/acorn_training_course_2024/klebsiella/klebsiella ACORN_course/cp6/data/
+cd ACORN_course/cp6/
 ```
 ### 6.2 WGS-based prediction of AMR using ABRicate
 #### 6.2.1 Introduction to ABRicate 
@@ -42,7 +43,7 @@ ABRicate is a tool for mass screening of contigs for antimicrobial resistance or
 #### 6.2.2 ABRicate commands
 ##### (i)	Check the help/manual
 ```
-abricate –help
+abricate --help
 ```
 <pre>
 SYNOPSIS
@@ -83,7 +84,7 @@ DOCUMENTATION
 
 ##### (ii)	Check the databases installed
 ```
-abricate –list
+abricate --list
 ```
 
 
@@ -105,13 +106,17 @@ abricate-get_db --db card
 abricate-get_db --db resfinder
 ```
 ```
-abricate -list
+abricate --list
 ```
 
 #### 6.2.3	Detection of acquired antimicrobial resistance genes
 Run abricate using resfinder database and save to a file
+**Create results directory**
 ```
-abricate -db resfinder data/saureus/A1-1_S1_L001.fasta > A1-1_resfinder.tab
+mkdir -p amr_genes
+```
+```
+abricate -db resfinder ACORN_course/cp6/data/A1-1_S1_L001.fasta > amr_genes/A1-1_resfinder.tab
 ```
 
 <pre>
@@ -126,6 +131,12 @@ A1-1_resfinder.tab : path to output file
 
 ##### Open the file with the AMR results
 ```
+cd amr_genes
+```
+```
+ls
+```
+```
 less -S A1-1_resfinder.tab
 ```
 <pre>
@@ -135,7 +146,9 @@ A1-1_resfinder.tab  : path to output file
 </pre>
 **Let's repeat the same steps using the NCBI database**
 ```
-abricate -db ncbi data/saureus/A1-1_S1_L001.fasta > A1-1_ncbi.tab
+cd ..
+abricate -db ncbi ACORN_course/cp6/data/A1-1_S1_L001.fasta > amr_genes/A1-1_ncbi.tab
+cd amr_genes
 less -S A1-1_ncbi.tab
 ```
 
@@ -155,13 +168,14 @@ ABRicate can combine results into a simple matrix of gene presence/absence. An a
 
 ##### Run abricate on `A1-2_S2_L001.fasta`
 ```
-abricate -db resfinder data/Saureus/A2-1_S2_L001.fasta > A1-2_resfinder.tab
+cd ~/ACORN_course/cp6/
+abricate -db resfinder ACORN_course/cp6/data/A1-2_S2_L001.fasta > amr_genes/A1-2_resfinder.tab
 ````
 ##### Combine
 ```
+cd amr_genes
 abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
 ```
-
 | #FILE |	NUM_FOUND |	ant(9)-Ia_1	| aph(2'')-Ia_2	| blaZ_79 |	erm(A)_1	|erm(B)_18	| mecA_6	|tet(M)_7 |
 |-----|----------|-------------|----------------|--------|-----------|----------|----------------|----|
 |A1-1_resfinder.tab|	4	|100.00|	.	|.|	100.00|	.|	100.00|	100.00|
@@ -170,11 +184,15 @@ abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
 
 ### To run all the genomes in a single report
 ```
-abricate -db ncbi *.fasta > all_saureus_amr_genes.tab
-abricate --summary all_saureus_amr_genes.tab > saureus_amr_summary.tab
+cd ACORN_course/cp6/
+```
+```
+abricate -db ncbi data/*.fasta > amr_genes/all_saureus_amr_genes.tab
+abricate --summary amr_genes/all_saureus_amr_genes.tab > amr_genes/saureus_amr_summary.tab
 ```
 #### View the results
 ```
+cd amr_genes
 less -S saureus_amr_summary.tab
 ```
 ## Exercises
