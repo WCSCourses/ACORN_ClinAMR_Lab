@@ -184,7 +184,7 @@ abricate --summary A1-1_resfinder.tab A1-2_resfinder.tab
 
 ### To run all the genomes in a single report
 ```
-cd ACORN_course/cp6/
+cd ~/ACORN_course/cp6
 ```
 ```
 abricate -db ncbi data/saureus/*.fasta > amr_genes/all_saureus_amr_genes.tab
