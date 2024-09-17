@@ -14,7 +14,6 @@ conda activate training
 #### Copy the data 
 ```
 cd ~
-mkdir data
 rsync -avP /data/acorn_training_course_2024/saureus/saureus ACORN_course/cp6/data/
 rsync -avP /data/acorn_training_course_2024/klebsiella/klebsiella ACORN_course/cp6/data/
 ```
