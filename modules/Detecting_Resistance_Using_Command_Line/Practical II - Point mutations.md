@@ -38,7 +38,7 @@ results_dir=~/ACORN_course/cp6/mutations
 mkdir -p $results_dir
 ```
 ```
-./PointFinder.py -i ~/ACORN_course/data/saureus/A1-11_S11_L001.fasta -o $results -p pointfinder_db/ -s staphylococcus_aureus -m blastn -m_p $(which blastn)
+./PointFinder.py -i ~/ACORN_course/data/saureus/A1-11_S11_L001.fasta -o $results_dir -p pointfinder_db/ -s staphylococcus_aureus -m blastn -m_p $(which blastn)
 ```
 ```
 cd $results
