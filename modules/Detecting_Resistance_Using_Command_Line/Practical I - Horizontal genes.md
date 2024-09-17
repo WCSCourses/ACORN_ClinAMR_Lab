@@ -148,6 +148,9 @@ less                : bash command to open files one page at a time
 -S                  : flag to prevent text wrapping
 A1-1_resfinder.tab  : path to output file
 </pre>
+>**NOTE:** To exit from less, press q
+>
+
 **Step 9: Let's repeat the same steps using the NCBI database**
 ```
 cd ..
