@@ -41,7 +41,7 @@ mkdir -p $results_dir
 ./PointFinder.py -i ~/ACORN_course/cp6/data/saureus/A1-1_S1_L001.fasta -o $results_dir -p pointfinder_db/ -s staphylococcus_aureus -m blastn -m_p $(which blastn)
 ```
 ```
-cd $results
+cd $results_dir
 ls
 less -S A1-1_blastn_results.tsv
 ```
