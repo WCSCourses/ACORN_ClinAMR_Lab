@@ -13,7 +13,7 @@ PointFinder is a tool designed for detecting antimicrobial resistance in bacteri
 
 ### Installation
 ```
-mkdir ~/ACORN_course/cp6
+mkdir -p ~/ACORN_course/cp6
 cd ~/ACORN_course/cp6
 git clone https://git@bitbucket.org/genomicepidemiology/pointfinder.git
 cd pointfinder
