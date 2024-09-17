@@ -96,7 +96,13 @@ mkdir -p $kpn_res
 
 2. Activate the appropriate conda environment for read QC tools
 
-`conda activate readQC`
+```
+# list the installed conda environments
+conda info --envs
+
+#activate the specific environment with our QC tools
+conda activate training
+```
 
 3. Now create an output directory for fastp results as a sub-directory of the directory we created in step (a) above.
 
