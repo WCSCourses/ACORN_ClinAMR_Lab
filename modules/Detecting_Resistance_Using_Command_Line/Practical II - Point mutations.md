@@ -11,11 +11,17 @@ In this practical we will focus on detecting chromosomal point mutations associa
 ### Point Finder
 PointFinder is a tool designed for detecting antimicrobial resistance in bacterial pathogens through Whole Genome Sequencing (WGS) by identifying chromosomal point mutations. It consists of two databases: one containing chromosomal gene sequences in fasta format, and the other with information on codon positions and mutations. PointFinder utilizes BLASTn to find the best match for each gene in the chromosomal gene database, analyzing only those hits with ≥80% identity. The tool examines each alignment by comparing query positions with corresponding positions in the database sequence. Any mismatches are saved and compared against the chromosomal mutation database. Users can choose to view all mismatches or only those that are known and found at specific positions in the chromosomal database.
 
-### Commands
+### Installation
+```
+mkdir ~/ACORN_course/cp6
+cd ~/ACORN_course/cp6
+git clone https://git@bitbucket.org/genomicepidemiology/pointfinder.git
+cd pointfinder
+git clone https://git@bitbucket.org/genomicepidemiology/pointfinder_db.git
+pip3 install cgecore
+```
 #### Help page
-```
-cd ...
-```
+
 ```
 ./PointFinder.py -h
 ```
@@ -28,10 +34,16 @@ usage: PointFinder.py [-h] -i INPUTFILES [INPUTFILES ...] -o OUT_PATH -s
 </pre>
 ### Detecting point mutations
 ```
-mkdir results
+results_dir=~/ACORN_course/cp6/mutations
+mkdir -p $results
 ```
 ```
-./PointFinder.py -i /home/amrlenovo2/Documents/ACORN/saureus/A1-11_S11_L001.fasta -o S_aureus -p pointfinder_db/ -s staphylococcus_aureus -m blastn -m_p /usr/bin/blastn
+./PointFinder.py -i ~/ACORN_course/data/saureus/A1-11_S11_L001.fasta -o $results -p pointfinder_db/ -s staphylococcus_aureus -m blastn -m_p $(which blastn)
+```
+```
+cd $results
+ls
+less -S A1-1_blastn_results.tsv
 ```
 ### Interpreting PointFinder output
 <pre>
