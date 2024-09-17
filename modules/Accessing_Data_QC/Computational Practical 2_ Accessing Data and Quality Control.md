@@ -1,5 +1,5 @@
 # Computational Practical 2: Accessing Data and Quality Control
-# Module Developers: Dr. Stanford Kwenda and Collins Kigen
+#### Module Developers: Dr. Stanford Kwenda and Collins Kigen
 
 ## 2.0 Learning outcomes
 
