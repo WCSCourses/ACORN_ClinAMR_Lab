@@ -15,8 +15,8 @@ conda activate training
 ```
 cd ~
 mkdir data
-rsync -avP /acorn_training_course_2024/saureus/saureus ACORN_course/cp6/data/
-rsync -avP /acorn_training_course_2024/klebsiella/klebsiella ACORN_course/cp6/data/
+rsync -avP /data/acorn_training_course_2024/saureus/saureus ACORN_course/cp6/data/
+rsync -avP /data/acorn_training_course_2024/klebsiella/klebsiella ACORN_course/cp6/data/
 ```
 ### 6.2 WGS-based prediction of AMR using ABRicate
 #### 6.2.1 Introduction to ABRicate 
