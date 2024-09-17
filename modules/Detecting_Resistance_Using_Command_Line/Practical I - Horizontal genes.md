@@ -7,7 +7,11 @@ Antibiotic resistance poses a significant health challenge because drugs that we
   1.	_Staphylococcus aureus_ (n=46)
   2.	_Klebsiella pneumoniae_ (n=47)
 
-#### Lets start by copying data
+#### Lets start by activating the environment with abricate 
+```
+conda activate training
+```
+#### Copy the data 
 ```
 cd ~
 mkdir data
