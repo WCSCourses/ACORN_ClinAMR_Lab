@@ -1,9 +1,9 @@
-**Computational Practical 2: Accessing Data and Quality Control**  
-**Module Developers: Dr. Stanford Kwenda and Collins Kigen**
+# Computational Practical 2: Accessing Data and Quality Control
+# Module Developers: Dr. Stanford Kwenda and Collins Kigen
 
-**2.0 Learning outcomes**
+## 2.0 Learning outcomes
 
-**2.1 Introduction**  
+## 2.1 Introduction  
 A typical whole genome sequencing process involves genomic DNA isolation, library  
 preparation and sequencing. Errors can be introduced during the library preparation and sequencing steps which may cause inaccurate representations of the original DNA sequences. 
 
@@ -54,9 +54,9 @@ In NGS, fastq data format is broadly adopted as the standard for the raw output 
 
 FASTQ data need to go through quality control and a series of preprocessing steps before they can enter the downstream analysis to ensure that clean and accurate reads are processed downstream.
 
-**2.3 Common QC metrics for raw data**
+## 2.3 Common QC metrics for raw data
 
-**Removal of adapter contamination**
+## Removal of adapter contamination
 
 * Sequence-matching based adapter trimming  
 - Tools: Cutadapt, Trimmomatic etc.  
@@ -64,34 +64,36 @@ FASTQ data need to go through quality control and a series of preprocessing step
 - Tools: Fastp, AfterQC  
 - Automatic adapter detection
 
-**Base correction**
+### Base correction
 
 * Mainly applied to paired-end data  
 * Only base pairs with an imbalance quality score are corrected
 
-**Improving read quality**
+### Improving read quality
 
 * Sliding window quality pruning method  
   * Drops low quality bases in each reads 5\` or 3\` region  
 * Filtering reads using a low-quality base percentage, N base number and read length
 
-**Trimming of polyG and polyX tails**
+### Trimming of polyG and polyX tails
 
 Some Illumina sequencing platforms such as the NextSeq series can produce reads with polyG tails due to their fluorescence chemistry resulting in some T and C bases being interpreted as Gs in read tails when signal strength of each cluster becomes weaker in subsequent cycles. The polyG tail issue can result in a serious base content separation problem, meaning that A and T or C and G have substantially different base content ratios. 
 
-**Overrepresented sequence analysis**
+### Overrepresented sequence analysis
 
 Some sequences, or even entire reads, can be overrepresented in FASTQ data. Analysis of these overrepresented sequences provides an overview of certain sequencing artifacts such as PCR over-duplication, polyG tails and adapter contamination.
 
-**Hands-on exercise 1: (20 min)**
+### Hands-on exercise 1: (20 min)
 
 We will now apply some of the concepts that were introduced above and perform QC on a set of raw data from Klebsiella pneumoniae and Staphylococcus aureus.
 
-1. Using fastp and commands provided below perform QC and preprocessing for K. pneumoniae. The output data should be saved in a directory called kpn\_qc.  
+Using fastp and commands provided below perform QC and preprocessing for K. pneumoniae. The output data should be saved in a directory called kpn\_qc.  
 1. First let’s create the output directory
 
-| kpn\_res\=\~/ACORN\_course/cp2/kpn\_qcmkdir \-p $kpn\_res |
-| :---- |
+```
+kpn_res=~/ACORN_course/cp2/kpn_qc
+mkdir -p $kpn_res
+```
 
 2. Activate the appropriate conda environment for read QC tools
 
