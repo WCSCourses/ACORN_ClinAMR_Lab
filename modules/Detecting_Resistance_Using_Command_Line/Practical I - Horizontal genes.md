@@ -206,7 +206,9 @@ less -S saureus_amr_summary.tab
 ## Exercises
 1. Run abricate on _S. aureus_ sample A5-17_S17_L001.fasta against the CARD database and list all the amr genes present.
 2. From the resfinder database, identify the following:
+   
    (i) The samples with ant(4')-Ia gene
+   
    (ii) The sample with the largest number of AMR genes. How many are they?
 ## AMR Genes in _Klebsiella pneumoniae_ genomes
 
