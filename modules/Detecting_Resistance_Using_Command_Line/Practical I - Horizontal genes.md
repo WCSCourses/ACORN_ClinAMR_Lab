@@ -111,6 +111,7 @@ abricate --list
 
 #### 6.2.3	Detection of acquired antimicrobial resistance genes
 Run abricate using resfinder database and save to a file
+
 **Step 6: Create results directory**
 ```
 mkdir -p amr_genes
