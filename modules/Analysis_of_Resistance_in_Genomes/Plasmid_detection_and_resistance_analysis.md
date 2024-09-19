@@ -17,6 +17,8 @@ cd ~/github
 #### 2. Clone the repository
 ```
 git clone https://gitlab.com/mmb-umcu/mlplasmids.git
+
+cd mlplasmids
 ```
 
 #### 3. Create a conda env for mlplasmid
