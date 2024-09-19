@@ -47,18 +47,30 @@ grep -c $outdir/input_genome.tab
 ```
 > How many plasmids were detected?
 
-#### 8. Now we can perform AMR prediction on the identified contigs e.g. using abricate - following the steps that were introduced in a previous session.
-
-```
-
-```
-
 
 ### Plasmid detection using online tools
 
 Navigate to the [plasmidfinder 2](https://cge.food.dtu.dk/services/PlasmidFinder/) webpage and upload the same isolate you have analyzed above.
 
 You might have to provide your email address so you get notified when the analysis is completed.
+
+
+Before you upload your sequence data, you have to choose the correct database and the correct data type. Once you have selected your file click upload to submit your job to the queue.
+
+
+#### Exercise 1:
+1. How many plasmids were detected?
+
+
+
+#### Exercise 2: 
+Now we can perform AMR prediction on the identified contigs e.g. using abricate - following the steps that were introduced in a previous session.
+
+##### Step 1: Create a new conda env for a tool called seqtk
+We want to use this tool to only select only the plasmid contigs and save them in a new fasta file. This will be our input for predicting plasmid related AMR genes (if any).
+```
+
+```
 
 
 
