@@ -6,30 +6,28 @@ We will analyze K. pneumoniae genomes for plasmid detection using a command-line
 
 ### Command-line approach
 
-```
-# First set-up the conda env
+### First set-up the conda env
 
-# 1. Create a directory to store the github repositories
+#### 1. Create a directory to store the github repositories
+```
 mkdir -p ~/github
 cd ~/github
+```
 
-# 2. Clone the repository
+#### 2. Clone the repository
+```
 git clone https://gitlab.com/mmb-umcu/mlplasmids.git
+```
 
-# 3. Create a conda env for mlplasmid
+#### 3. Create a conda env for mlplasmid
+```
 conda deactivate
 conda env create -f envs/mlplasmids.yml --solver=libmamba
+```
 
-# 4. Activate the environment
+#### 4. Activate the environment
+```
 conda activate mlplasmids
-
-
-
-
-
-
-
-
 ```
 
 
