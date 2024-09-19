@@ -3,6 +3,13 @@
 **!Note**: you have to replace the {input} bracket with your input to be able to run the command. 
 
 ## Core Genome 
+We will use `snippy` again for this practical, before that we have to install `snippy` 
+
+```
+conda create -n snp -c bioconda -c conda-forge snippy=4.6.0 bcftools=1.15.1 snpeff=4.3 samtools=1.19
+conda activate snp
+```
+
 Firstly, we create a input `tab` file, which contains the sample ID and its path to the contig sequence file, to supply to snippy. 
 The `tab` file should follow the format below 
 
