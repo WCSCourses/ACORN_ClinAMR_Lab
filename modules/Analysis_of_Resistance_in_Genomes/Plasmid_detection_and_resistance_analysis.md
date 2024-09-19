@@ -94,7 +94,7 @@ seqtk subseq -l 60 input_genome.fasta $outdir/plasmid_contig_names.txt > $outdir
 ```
 conda activate training
 
-abricate -db resfinder data/saureus/A1-1_S1_L001.fasta > amr_genes/A1-1_resfinder.tab
+abricate -db resfinder $outdir/input_genome.plasmid_contig.fasta > $outdir/plasmid_resfinder.tab
 
 
 ```
