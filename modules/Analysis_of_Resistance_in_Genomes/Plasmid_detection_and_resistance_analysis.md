@@ -71,7 +71,8 @@ Now we can perform AMR prediction on the identified contigs e.g. using abricate 
 ##### Step 1: Create a new conda env for a tool called seqtk
 We want to use this tool to only select only the plasmid contigs and save them in a new fasta file. This will be our input for predicting plasmid related AMR genes (if any).
 ```
-conda env create -n seqtk -c bioconda seqtk
+conda create -n seqtk seqtk -c bioconda --solver=libmamba
+
 ```
 
 ##### Step 2: Get names of the contigs detected as plasmids
@@ -83,14 +84,17 @@ cut -f4 $outdir/input_genome.tab | sed 's/\"//g' | grep -v Contig_name > $outdir
 
 ##### Step 3: Get sequences for contigs with plasmids detected
 ```
-seqtk subseq -l 60 input_genome.fasta $outdir/plasmid_contig_names.txt > $outdir/input_genome.plasmid_contig.fasta
 # replace input_genome.fasta with actual path to the genome assembly used in step 6
+seqtk subseq -l 60 input_genome.fasta $outdir/plasmid_contig_names.txt > $outdir/input_genome.plasmid_contig.fasta
+
 ```
 
 ##### Step 4: Now run abricate to identify plasmid-related AMR genes if any
 
 ```
+conda activate training
 
+abricate -db resfinder data/saureus/A1-1_S1_L001.fasta > amr_genes/A1-1_resfinder.tab
 
 
 ```
